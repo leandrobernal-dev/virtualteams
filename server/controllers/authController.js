@@ -16,7 +16,7 @@ const handleLogin = (req, res) => {
                     // check if password matches
                     if (!passwordCheck) {
                         return res.status(400).send({
-                            message: "Email or Password is Incorrect!",
+                            message: "Email or Password Incorrect!",
                         });
                     }
                     // create JWT token
@@ -38,13 +38,13 @@ const handleLogin = (req, res) => {
                 })
                 .catch((e) => {
                     res.status(400).send({
-                        message: "Email or Password is Incorrect!",
+                        message: "Email or Password Incorrect!",
                     });
                 });
         })
         .catch((e) => {
             res.status(404).send({
-                message: "Email or Password is Incorrect!",
+                message: "Email or Password Incorrect!",
                 e,
             });
         });
@@ -64,7 +64,7 @@ const handleNewUser = (req, res) => {
                     userEmail: user.email,
                 },
                 "RANDOM-TOKEN",
-                { expiresIn: "30s" }
+                { expiresIn: "1hr" }
             );
             user.save()
                 .then((result) => {
