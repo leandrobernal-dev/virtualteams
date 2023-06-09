@@ -1,0 +1,6 @@
+version: '3'
+services:
+  api-server:
+    image: virtualteams
+    ports:
+      - "3500:3500"
